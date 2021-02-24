@@ -2,17 +2,19 @@ var total = 0;
 var diferencia = 0;
 var subtotal = 0;
 var presupuesto = 0;
+var subsubtotal = 0;
 
 function sumaTotal() {
-    diferencia = total - presupuesto;
-    document.getElementById("total").innerHTML = total + ".";
-    document.getElementById("diferencia").innerHTML = diferencia + ".";
+    document.getElementById("subtotal").innerHTML = subtotal;
+    document.getElementById("diferencia").innerHTML = diferencia;
+    diferencia = presupuesto - subtotal;
 }
 
 function addRow() {
     producto = document.getElementById("producto").value;
     precio = document.getElementById("precio").value;
     cantidad = document.getElementById("cantidad").value;
+    presupuesto = document.getElementById("presupuesto").value;
 
     celda1 = document.createElement("td");
     celda1.innerHTML = [producto];
@@ -29,7 +31,7 @@ function addRow() {
     celda4.innerHTML = [subsubtotal];
     celda4.className = "subtotal";
 
-    if (subsubtotal > presupuesto) {
+    if (subtotal > presupuesto) {
         celda5 = document.createElement("td");
         celda5.innerHTML = ["sobre"];
     }
