@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 3</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form name="form" id="form" action="" onsubmit="return false;">
+        <h2>Formulario de compra</h2>
+        <label for="presupuesto">Seleccione su presupuesto:</label>
+        <select id="presupuesto" name="presupuesto">
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="250">250</option>
+            <option value="500">500</option>
+        </select><br>
+        <label for="producto">Producto:</label><br>
+        <input type="text" id="producto" name="producto"><br>
+        <label for="precio">Precio:</label><br>
+        <input type="text" id="precio" name="precio"><br>
+        <label for="cantidad">Cantidad:</label><br>
+        <input type="text" id="cantidad" name="cantidad"><br><br>
+
+        <input type="submit" value="Agregar" onclick="addRow();return false;" />
+        <input type="submit" value="Suma Total" onclick="sumaTotal();return false;" />
+        <br>
+    </form>
+
+    <br>
+    <table style="width:50%" style="display: inline-block" id="compras" name="compras">
+        <thead id="initial">
+            <tr>
+                <th>Compra</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <thead id="next"></thead>
+    </table>
+
+    Total:<p id="totalText"></p>
+    Diferencia:<p id="diferenciaText"></p>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
